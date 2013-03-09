@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>&#x2B22;&#x2B23;</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <div data-font-size="100" data-font-factor="1.01">&#x2B22;</div>
+    <script>
+// https://developer.mozilla.org/en-US/docs/DOM/window.setTimeout
+(function() {
+  div = document.getElementsByTagName("div")[0];
+  title = document.getElementsByTagName("title")[0];
+  var id = setInterval(function(){
+    if (div.innerHTML=='\u2B22') {
+      div.innerHTML = '\u2B23'; title.innerHTML = '\u2B23';
+    } else {
+      div.innerHTML = '\u2B22'; title.innerHTML = '\u2B22';
+    }
+    fontSize = div.getAttribute('data-font-size') * div.getAttribute('data-font-factor')
+    div.style.fontSize = fontSize + '%';
+    div.setAttribute('data-font-size', fontSize)
+  }, 1000); 
+})();
+    </script>
+  </body>
+</html>
